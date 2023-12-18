@@ -1,0 +1,1 @@
+/Users/huwj/project/repo/emsdk/upstream/emscripten/em++ @CMakeFiles/PngQuantizeTool.dir/objects1.rsp -o PngQuantizeTool.js @CMakeFiles/PngQuantizeTool.dir/linkLibs.rsp

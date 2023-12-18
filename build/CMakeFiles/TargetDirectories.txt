@@ -1,0 +1,3 @@
+/Users/huwj/project/program/PngQuantizeTool/build/CMakeFiles/PngQuantizeTool.dir
+/Users/huwj/project/program/PngQuantizeTool/build/CMakeFiles/edit_cache.dir
+/Users/huwj/project/program/PngQuantizeTool/build/CMakeFiles/rebuild_cache.dir
