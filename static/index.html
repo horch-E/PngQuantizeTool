@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽图片数据传递给Wasm示例</title>
+    <style>
+        #dropzone {
+            width: 400px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+        }
+        #dropzone.dragover {
+            background-color: #f7f7f7;
+        }
+        #result {
+            display: none;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div id="dropzone">拖拽图片到此处</div>
+<img id="result" src="" alt="处理后的图片">
+
+<script>
+    var dropzone = document.getElementById('dropzone');
+    var resultImage = document.getElementById('result');
+
+    dropzone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('dragover');
+    });
+
+    dropzone.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('dragover');
+    });
+
+    dropzone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('dragover');
+
+        var file = e.dataTransfer.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var imageData = new Uint8Array(e.target.result);
+            // 将 imageData 传递给 Wasm 模块进行处理
+            // 这里可以调用 Wasm 模块的函数，传递 imageData 作为参数
+            var processedData = processImageData(imageData); // 假设这是 Wasm 模块的处理函数
+
+            // 将处理后的数据显示在网页上
+            var blob = new Blob([processedData], { type: 'image/jpeg' });
+            var url = URL.createObjectURL(blob);
+            resultImage.src = url;
+            resultImage.style.display = 'block';
+        };
+
+        reader.readAsArrayBuffer(file);
+    });
+
+    // 假设这是 Wasm 模块的处理函数
+    function processImageData(imageData) {
+        // 在此处执行图像处理操作，并返回处理后的数据
+        // 这里只是示例，实际的图像处理操作需根据您的需求来实现
+        var processedData = imageData; // 这里仅将原始数据作为示例返回
+        return processedData;
+    }
+</script>
+<script src="PngQuantizeTool.js"> </script>
+</body>
+</html>

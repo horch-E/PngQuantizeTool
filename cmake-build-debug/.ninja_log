@@ -1,0 +1,5 @@
+# ninja log v5
+376	425	1702912367769530718	PngQuantizeTool	4d2fc7ab79e0ee98
+11	670	1702915219237239587	CMakeFiles/PngQuantizeTool.dir/main.cpp.o	751633ba7b5e1291
+12	709	1702911972889083671	CMakeFiles/PngQuantizeTool.dir/imagequant/include/lodepng.cpp.o	ff4369913d2ab7f1
+0	58	1702916997774852228	build.ninja	1b0ce2124e759d37
