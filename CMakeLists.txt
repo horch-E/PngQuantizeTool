@@ -8,7 +8,11 @@ include_directories(${SOURCE_DIR})
 
 set(SOURCE main.cpp ${SOURCE_DIR}/lodepng.cpp)
 
-link_directories(imagequant/lib)
+IF (EMSCRIPTEN)
+    link_directories(imagequant/lib/web)
+ELSE ()
+    link_directories(imagequant/lib/mac)
+ENDIF ()
 
 add_executable(PngQuantizeTool ${SOURCE})
 

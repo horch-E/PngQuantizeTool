@@ -27,19 +27,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 11,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 15,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
@@ -97,11 +97,11 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/huwj/project/program/PngQuantizeTool/imagequant/lib",
+				"fragment" : "-L/Users/huwj/project/program/PngQuantizeTool/imagequant/lib/mac",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/huwj/project/program/PngQuantizeTool/imagequant/lib",
+				"fragment" : "-Wl,-rpath,/Users/huwj/project/program/PngQuantizeTool/imagequant/lib/mac",
 				"role" : "libraries"
 			},
 			{
