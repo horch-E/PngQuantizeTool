@@ -1,0 +1,4 @@
+/build/
+/cmake-build-debug/
+/static/PngQuantizeTool.js
+/static/PngQuantizeTool.wasm
